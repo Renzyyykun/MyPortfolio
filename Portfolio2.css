@@ -1,0 +1,345 @@
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #000000; /* Changed to black background for the whole page */
+        color: #e0e0e0; /* Light gray text for readability */
+        line-height: 1.6; /* Improved line height for better readability */
+    }
+
+    /* Navigation Bar */
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        background-color: #100c12; /* Darker navbar */
+        border-bottom: 2px solid #ff00ff; /* Bright border for emphasis */
+    }
+
+    .brand-name span {
+        font-size: 2.8rem; /* Increased font size to match "Hey I'm Rence" */
+        font-weight: bold;
+        color: #ff12ff; /* Bright color for brand name */
+        transition: all 0.3s ease-in-out;
+    }
+
+    .brand-name span:hover {
+        color: #fff;
+        text-shadow: 0 0 15px #9400d3, 0 0 25px #ff00ff, 0 0 40px #00bfff;
+        animation: glow-pulse 1.5s infinite;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        justify-content: center; /* Center links on smaller screens */
+    }
+
+    .nav-links li {
+        margin: 0 1.5rem; /* Increased margin for more space */
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #00bfff;
+        font-size: 1.1rem; /* Slightly larger font size */
+        transition: color 0.5s ease, text-decoration 0.5s ease, background-color 0.5s ease; /* Slower transition */
+        position: relative; /* For the underline effect */
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px; /* Position the underline */
+        height: 2px;
+        background: #ff00ff; /* Underline color */
+        transform: scaleX(0); /* Start with no underline */
+        transition: transform 0.5s ease; /* Slow underline transition */
+    }
+
+    .nav-links a:hover {
+        color: #ff00ff;
+        background-color: rgba(255, 0, 255, 0.2); /* Highlight effect */
+        transform: scale(1.1); /* Slightly scale up on hover */
+    }
+
+    .nav-links a:hover::after {
+        transform: scaleX(1); /* Show underline on hover */
+    }
+
+    /* About Section */
+    .about-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 4rem 2rem; /* Increased padding */
+        margin: 2rem auto;
+        max-width: 1000px;
+        background-color: transparent; /* Removed background for the section */
+        border-radius: 10px; /* Rounded corners for the section */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+        opacity: 0; /* Start hidden */
+        transform: translateY(20px); /* Start slightly below */
+        transition: opacity 0.6s ease, transform 0.6s ease; /* Transition for fade-in effect */
+    }
+
+    .about-section.visible {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+
+    .about-text {
+        flex: 1;
+        max-width: 60%;
+        padding-left: 2rem;
+    }
+
+    .about-text h2 {
+        font-size: 2.5rem; /* Increased font size */
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .about-text h2 span {
+        color: #00eeff;
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #9400d3;
+        animation: glow-pulse 1.5s infinite;
+    }
+
+    .about-text p {
+        font-size: 1.4rem; /* Increased font size */
+        color: #dcdcdc;
+        margin-bottom: 1rem;
+    }
+
+    .im-a-text {
+        font-size: 2.5rem; /* Changed to match the size of "Rence" */
+        font-weight: bold;
+        color: #ffffff;
+        margin-right: 0.5rem;
+    }
+
+    .animated-text-wrapper {
+        display: inline-block;
+        font-size: 2.5rem; /* Changed to match the size of "Rence" */
+        font-weight: bold;
+        color: #00eeff;
+        animation: color-change 3s infinite;
+    }
+
+    @keyframes color-change {
+        0% { color: #9400d3; }
+        25% { color: #ff00ff; }
+        50% { color: #00bfff; }
+        75% { color: #ff12ffbf; }
+        100% { color: #9400d3; }
+    }
+
+    /* Social Media Icons */
+    .social-icons {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        justify-content: center; /* Center icons */
+    }
+
+    .social-icons a {
+        font-size: 2rem;
+        color: #00bfff;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #ff00ff;
+        transform: scale(1.2);
+    }
+
+    /* Hire Me Button */
+    .hire-me a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: #fff;
+        background: linear-gradient(45deg, #4e064e, #9400d3, #ff00ff, #00bfff);
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        box-shadow: 0 0 15px #9400d3;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hire-me a:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px #ff00ff, 0 0 50px #00bfff, 0 0 75px #9400d3;
+    }
+
+    @keyframes glow-pulse {
+        0%, 100% {
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #9400d3, 0 0 30px #00bfff;
+        }
+        50% {
+            text-shadow: 0 0 20px #ff00ff, 0 0 40px #9400d3, 0 0 60px #00bfff;
+        }
+    }
+
+    /* Image with Moving Border */
+    .about-image {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        overflow: hidden;
+        border-radius: 50%; /* Circular shape */
+        box-shadow: 0 0 20px #ff00ff, 0 0 40px #00bfff, 0 0 60px #9400d3;
+        margin: 1rem;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border: 5px solid #ff00ff; /* Added border to highlight the image */
+        box-shadow: 0 0 20px #ff00ff, 0 0 40px #00bfff; /* Enhanced shadow for more emphasis */
+    }
+
+/* Introduction Section */
+.introduction-section {
+padding: 2rem 1rem; 
+margin: 2rem auto;
+max-width: 1000px;
+display: flex;
+flex-wrap: wrap; 
+justify-content: space-between;
+align-items: center;
+background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+border-radius: 15px;
+box-shadow: 0 8px 30px rgba(23, 39, 69, 0.795);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.introduction-section:hover {
+transform: scale(1.02);
+box-shadow: 0 12px 40px rgba(100, 8, 40, 0.775);
+}
+
+/* Left Side - Text Section */
+.introduction-section .left-side {
+flex: 1;
+padding-right: 2rem;
+font-family: 'Poppins', sans-serif;
+max-width: 600px; 
+}
+
+.introduction-section h2 {
+font-size: 2.5rem; 
+color: #ffffff;
+font-weight: 700;
+margin-bottom: 1rem;
+background: linear-gradient(45deg, #9400d3, #ff00ff);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: gradient-fade 3s infinite alternate;
+}
+
+.introduction-section p {
+font-size: 1.2rem;
+line-height: 1.8;
+color: #dcdcdc;
+margin-bottom: 1.5rem;
+letter-spacing: 0.5px;
+}
+
+/* Right Side - Image Section */
+.introduction-section .right-side {
+flex: 1;
+display: flex;
+justify-content: center;
+max-width: 300px; 
+margin-top: 1rem;
+}
+
+.introduction-section .right-side .image-slider {
+position: relative;
+width: 100%; 
+max-width: 300px; 
+height: auto;
+border-radius: 15px; 
+overflow: hidden;
+background: linear-gradient(135deg, #660b66, #1f2527, #520a71c0);
+padding: 5px; 
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.introduction-section .right-side .image-slider img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 10px;
+transition: transform 0.3s ease; /* Smooth hover transition */
+}
+
+/* Hover Effect for Image */
+.introduction-section .right-side .image-slider:hover {
+transform: scale(1.1); /* Slight zoom on hover */
+box-shadow: 0 8px 20px rgba(255, 255, 255, 0.5);
+}
+
+.introduction-section .right-side .image-slider:hover img {
+transform: scale(1.1); /* Smooth zoom for the image itself */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.introduction-section {
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    padding: 1.5rem 1rem;
+}
+
+.introduction-section .left-side {
+    padding-right: 0; 
+    max-width: 100%; 
+}
+
+.introduction-section h2 {
+    font-size: 2rem; 
+}
+
+.introduction-section p {
+    font-size: 1rem; 
+}
+
+.introduction-section .right-side {
+    margin-top: 1rem;
+    max-width: 80%; 
+}
+
+.introduction-section .right-side .image-slider {
+    max-width: 250px; 
+}
+}
+
+@media (max-width: 480px) {
+.introduction-section h2 {
+    font-size: 1.8rem; 
+}
+
+.introduction-section p {
+    font-size: 0.9rem; 
+}
+
+.introduction-section .right-side .image-slider {
+    max-width: 200px; 
+}
+}

@@ -1,0 +1,375 @@
+/* Chat Design Starts Here */
+
+/* Floating Chat Button */
+#chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #ff12ff, #9400d3, #00bfff);
+    color: white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    font-size: 28px;
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+#chat-button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, #ff00ff, #9400d3, #00bfff);
+}
+
+/* Chat Modal */
+#chat-modal {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 320px;
+    border-radius: 12px;
+    border: 1px solid #ff00ff;
+    background-color: #1c1c1c;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+#chat-modal.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modal Header */
+#chat-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #50086c, #6e0b8a);
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+#chat-modal-header h4 {
+    margin: 0;
+}
+
+/* Close Button */
+#close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#close-chat:hover {
+    color: #ff00ff;
+}
+
+/* Chat Content */
+#chat-window {
+    height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #161616;
+}
+
+/* Messages */
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    padding: 12px;
+    border-radius: 15px;
+    max-width: 75%;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.user-message {
+    align-self: flex-start;
+    background: linear-gradient(135deg, #550847, #870f74);
+    color: white;
+}
+
+.bot-message {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #0f4574, #094d87);
+    color: white;
+}
+
+/* Chat Options */
+#options {
+    padding: 15px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Chat Options Buttons */
+#options button {
+    background: linear-gradient(135deg, #ff12ff, #6b00b3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#options button:hover {
+    background: linear-gradient(135deg, #ff00ff, #9400d3);
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #chat-modal {
+        width: 90%; /* Adjust width for smaller screens */
+        bottom: 20px;
+        right: 5%;
+    }
+
+    #chat-modal-header {
+        padding: 12px; /* Reduce padding for smaller screens */
+    }
+
+    #chat-window {
+        height: 250px; /* Adjust height for smaller screens */
+    }
+
+    #options button {
+        padding: 8px 15px; /* Reduce padding for buttons */
+        font-size: 12px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    #chat-modal {
+        width: 95%; /* Further adjust for very small screens */
+        right: 2.5%;
+        bottom: 10px;
+    }
+
+    #chat-window {
+        height: 200px; /* Reduce chat window height */
+    }
+
+    #chat-button {
+        width: 60px; /* Adjust size of floating button */
+        height: 60px;
+        font-size: 24px;
+    }
+
+    #options button {
+        padding: 6px 10px; /* Compact buttons */
+        font-size: 11px;
+    }
+}
+
+
+
+/* Skills Word Image */
+.skills-word {
+    font-size: 5rem;
+    font-weight: bold;
+    color: transparent;
+    position: relative;
+    text-align: center;
+    margin-top: 2rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url('Images/AURA.gif'); /* Replace with your image */
+    background-size: 100% 100%; /* Adjusted to cover the entire text */
+    background-position: center;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7); /* Darker shadow for better contrast */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Transition for hover effects */
+}
+
+.skills-word:hover {
+    transform: scale(1.1); /* Scale up on hover */
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.9), 0 0 20px #004cff; /* Enhanced shadow on hover */
+}
+
+/* Background for Skills Section */
+.skills-background {
+    background-image: url('Images/Landscape Kaiser 1.jpg'); /* Add your background image here */
+    background-size: 500px 300px; /* Set the size to 500 by 300 */
+    background-position: center;
+    padding: 2rem 0; /* Add padding for spacing */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+.skills-background:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Darken background on hover */
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem 0 1rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #9400d3;
+}
+
+/* Skills Analytics */
+.skills-analytics {
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.analytics-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.analytics-item {
+    width: 45%;
+    text-align: left;
+}
+
+/* Progress Bar */
+
+.progress-bar {
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    background: #643f889e; /* Background color of the bar */
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional shadow */
+}
+
+.progress {
+    height: 100%;
+    background-size: cover; /* Ensure the image covers the area */
+    background-position: center; /* Center the image */
+    transition: width 0.3s ease; /* Smooth transition for animation */
+    position: relative;
+}
+/*Progress text */
+.progress {
+    position: relative;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fefefe; /* Adjust color as needed */
+    font-size: 1.2rem; /* Adjust font size as needed */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.progress:hover .progress-text {
+    opacity: 1; /* Show text on hover */
+}
+/* UI/UX Design Section */
+.ui-ux-designs .design-gallery {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.ui-ux-designs img {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ui-ux-designs img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+/* Websites Section */
+.websites .website-gallery {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.website-item {
+    text-align: center;
+}
+
+.website-item img {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.website-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.website-item p {
+    margin-top: 0.5rem;
+    color: #dcdcdc;
+    font-size: 1.2rem;
+}
+
+/* Common style for the glowing section titles */
+.glowing-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: transparent;
+    text-align: center;
+    margin: 2rem 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url('Images/Flames.gif'); /* Replace with your image */
+    background-size: 100% 100%; /* Adjusted to cover the entire text */
+    background-position: center;
+    text-shadow: 2px 2px 0 rgba(182, 145, 199, 0.701); /* Darker shadow for better contrast */
+    transition: transform 0.3s ease, text-shadow 0.3s ease; /* Transition for hover effects */
+}
+
+.glowing-title:hover {
+    transform: scale(1.1); /* Scale up on hover */
+    text-shadow: 4px 4px 0 rgba(154, 102, 162, 0.9), 0 0 20px #100687; /* Enhanced shadow on hover */
+}

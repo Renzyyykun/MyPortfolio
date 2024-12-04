@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolion </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Portfolio.css">
+    <link rel="stylesheet" href="Portfolio2.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="brand-name">
+                    <span>My Portfolio</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-image">
+            <img src="Images/Kaiser.jpg" alt="Your Picture">
+        </div>
+        <div class="about-text">
+            <h2>Hey I'm <span class="animated-text-wrapper">Rence</span></h2>
+            <p><span class="im-a-text">I'm a </span><span class="animated-text-wrapper"><span id="animated-text"></span></span></p>
+            <p>
+                A student looking for opportunities
+                to improve my skills and overall capability to 
+                become a web developer someday.
+            </p>
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://web.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://telegram.org" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+            <!-- Hire Me Button -->
+            <div class="hire-me">
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJqbQHFzWCvxhQBDdKCfGllCflkMRWNtKrHzztpzPVbMTQmlKSLpkvSngVfNsTKRktxPVML">HIRE ME</a>
+            </div>
+        </div>
+    </section>
+
+   <!-- Introduction Section -->
+   <section class="introduction-section">
+    <div class="left-side">
+        <h2>More About Me</h2>
+        <p>
+            I am a passionate web developer with a keen interest in creating dynamic and responsive web applications. 
+            My journey in technology began at a young age, and I have continuously sought to expand my knowledge and skills. 
+        </p>
+        <p>
+            In addition to my technical skills, I value collaboration and communication, believing that great ideas come from teamwork. 
+        </p>
+    </div>
+    <div class="right-side">
+        <div class="image-slider">
+            <img src="Images/Michael Kaiser (Blue Lock Live Wallpaper).jpg" alt="Image of me">
+        </div>
+    </div>
+</section>
+
+
+<!-- Skills Word Image -->
+<div class="skills-background">
+    <div class="skills-word">SKILLS</div>
+</div>
+
+<!-- Skills Analytics Section -->
+<section class="skills-analytics">
+    <h2 class="glowing-title">Skills Analytics</h2>
+    <div class="analytics-container">
+        <div class="analytics-item">
+            <label>HTML</label>
+            <div class="progress-bar">
+                <div class="progress" 
+                     data-percent="90" 
+                     style="width: 90%; background-image: url('Images/anime gif2.gif');">
+                    <span class="progress-text">90%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="analytics-item">
+            <label>CSS</label>
+            <div class="progress-bar">
+                <div class="progress" 
+                     data-percent="80" 
+                     style="width: 80%; background-image: url('Images/anime gifs.gif');">
+                    <span class="progress-text">80%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="analytics-item">
+            <label>JavaScript</label>
+            <div class="progress-bar">
+                <div class="progress" 
+                     data-percent="70" 
+                     style="width: 70%; background-image: url('Images/anime gifs5.gif');">
+                    <span class="progress-text">70%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="analytics-item">
+            <label>Figma</label>
+            <div class="progress-bar">
+                <div class="progress" 
+                     data-percent="85" 
+                     style="width: 85%; background-image: url('Images/NEZUKA.gif');">
+                    <span class="progress-text">85%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- UI/UX Design Section -->
+<section class="ui-ux-designs">
+    <h2 class="glowing-title">Sae X Kaiser</h2>
+    <div class="design-gallery">
+        <img src="Images/Kaiser 2.jpg" alt="UI Design 1">
+        <img src="Images/Itoshi 1.jpg" alt="UI Design 2">
+        <img src="Images/download.jpg" alt="UI Design 3">
+    </div>
+</section>
+
+<!-- Websites Section -->
+<section class="websites">
+    <h2 class="glowing-title">EGOIST.</h2>
+    <div class="website-gallery">
+        <div class="website-item">
+            <img src="Images/Isagi 1.jpg" alt="Website 1">
+            <p>Him</p>
+        </div>
+        <div class="website-item">
+            <img src="Images/Isagi 3.jpg" alt="Website 2">
+            <p>Nah I'll Adapt</p>
+        </div>
+        <div class="website-item">
+            <img src="Images/Isagi.jpg" alt="Website 3">
+            <p>Sagi</p>
+        </div>
+    </div>
+</section>
+
+<!-- Floating Chat Button -->
+<div id="chat-button" onclick="toggleChatModal()">
+    💬
+</div>
+  
+<!-- Chat Modal -->
+<div id="chat-modal">
+    <div id="chat-modal-header">
+        <span class="chat-header">Hi I'm Rence Ask Your Questions here</span>
+        <button id="close-chat" onclick="toggleChatModal()">✖</button>
+    </div>
+    <div id="chat-window">
+        <div id="messages"></div>
+    </div>
+    <div id="options">
+        <button onclick="handleClick('What do you do?')">What do you do?</button>
+        <button onclick="handleClick('How can I contact you?')">How can I contact you?</button>
+        <button onclick="handleClick('Show me your skills')">Show me your skills</button>
+    </div>
+</div>
+
+<script>
+    // Typing Effect
+    const texts = ["FRONT END DEVELOPER", "BACK END DEVELOPER", "FREELANCER", "SQL EXPERT"];
+    let index = 0;
+    let currentText = '';
+    let letterIndex = 0;
+
+    function type() {
+        if (letterIndex < texts[index].length) {
+            currentText += texts[index].charAt(letterIndex);
+            document.getElementById("animated-text").textContent = currentText;
+            letterIndex++;
+            setTimeout(type, 100); // Speed of typing
+        } else {
+            setTimeout(backspace, 2000); // Pause before backspacing
+        }
+    }
+
+    function backspace() {
+        if (letterIndex > 0) {
+            currentText = currentText.slice(0, -1);
+            document.getElementById("animated-text").textContent = currentText;
+            letterIndex--;
+            setTimeout(backspace, 100); // Speed of backspacing
+        } else {
+            index = (index + 1) % texts.length;
+            setTimeout(type, 500); // Pause before typing the next text
+        }
+    }
+
+    type(); // Start typing effect
+
+    // Fade-in Effect on Scroll
+    const sections = document.querySelectorAll('.about-section, .introduction-section');
+    const options = {
+        root: null,
+        threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, options);
+
+    sections.forEach((section) => observer.observe(section));
+
+    // Toggle Chat Modal with Animation
+    function toggleChatModal() {
+        const chatModal = document.getElementById("chat-modal");
+        if (chatModal.classList.contains("show")) {
+            chatModal.classList.remove("show");
+            setTimeout(() => {
+                chatModal.style.display = "none"; // Hide after animation
+            }, 300); // Matches CSS transition duration
+        } else {
+            chatModal.style.display = "flex"; // Display modal
+            setTimeout(() => chatModal.classList.add("show"), 10); // Trigger transition
+        }
+    }
+
+    // Chat Logic
+    const messagesDiv = document.getElementById("messages");
+
+    // Predefined Responses
+    const responses = {
+        "What do you do?": "I am a web developer specializing in modern, responsive designs.",
+        "How can I contact you?": "You can email me at example@example.com.",
+        "Show me your skills": "I excel in HTML, CSS, JavaScript, and React.",
+    };
+
+    // Handle Button Clicks
+    function handleClick(question) {
+        const userMessage = document.createElement("div");
+        userMessage.className = "message user-message";
+        userMessage.textContent = question;
+        messagesDiv.appendChild(userMessage);
+
+        const botMessage = document.createElement("div");
+        botMessage.className = "message bot-message";
+        botMessage.textContent = responses[question];
+        messagesDiv.appendChild(botMessage);
+
+        // Add Transition Effect to Messages
+        setTimeout(() => {
+            userMessage.classList.add('show');
+            botMessage.classList.add('show');
+        }, 50);
+
+        // Scroll to the Latest Message
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+</script>
+
+</body>
+</html>
